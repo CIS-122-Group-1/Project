@@ -30,6 +30,7 @@ public class Project {
                 System.out.println("X - quit program");
                 System.out.print("Enter choice: ");
                 choice = scanner.next();                                    // take in user input
+                System.out.println();
 
                 try                                 // try/catch blocks in case the user enters an invalid option
                 {
@@ -103,6 +104,7 @@ public class Project {
             String semester = scanner.nextLine();                                                       // storing semester that the user wants to input grades for. used to reference stored semesters
 
             System.out.print("Enter the number of classes taken: ");
+
 
             int numClasses = scanner.nextInt();                                                         // prompting user for how many classes they wish to enter grades for, for desired semester
 
@@ -256,8 +258,6 @@ public class Project {
 
         }
 
-
-
         public static void maptostring(Map<String,String> input)            // method to put all the contents of the map into an arraylist so we can use recursion to print out the contents
         {
 
@@ -304,15 +304,6 @@ public class Project {
 
 
 
-
-
-
-
-
-
-
-
-
 //        public static void printSemesters()                                 // method to print all semesters that have been stored
 //        {
 //            if (StoredSemesters.size() > 0)                                 // checking if any semesters have been stored
@@ -337,11 +328,13 @@ public class Project {
         public static void searchSemesters()                        // method that searches the stored semesters for an inputted semester and then prints the semester gpa if found
         {
             Scanner scanner = new Scanner(System.in);
-            System.out.println("Enter the semester to search for (2019 fall, 2020 spring, etc): ");
-            String toSearch = scanner.nextLine();
+
 
             if (StoredSemesters.size() > 0)
+
             {
+                System.out.println("Enter the semester to search for (2019 fall, 2020 spring, etc): ");
+                String toSearch = scanner.nextLine();
                 if (StoredSemesters.containsKey(toSearch))                                              // if the inputted semester is found, print it out
                 {
                     System.out.println("Semester found: " + toSearch + ": " + StoredSemesters.get(toSearch) + " GPA");
@@ -386,6 +379,7 @@ public class Project {
             {
                 System.out.println("Initializing Menu...");
                 Thread.sleep(1000);
+                System.out.println();
             }
             else
             {
